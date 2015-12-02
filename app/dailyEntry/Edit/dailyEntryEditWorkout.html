@@ -1,0 +1,118 @@
+<form class="form-horizontal" name="dailyEntryEditWorkoutForm">
+  <fieldset>
+    <legend>Workout Information</legend>
+
+    <div ng-repeat="workout in vm.dailyEntry.workout">
+      <!--Fields-->
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="workoutType">Workout</label>
+
+        <div class="col-md-2">
+          <select id="workoutType" name="workoutType" ng-model="workout.workoutType.workoutTypeId" required>
+            <option value="10">Other</option>
+            <option value="1">Swimming</option>
+            <option value="2">Running</option>
+            <option value="11">Climbing</option>
+            <option value="3">Weight Lifting</option>
+            <option value="4">Walk</option>
+            <option value="6">Cycling</option>
+            <option value="7">Trekking</option>
+            <option value="8">Frisbee</option>
+            <option value="9">Tag Rugby</option>
+          </select><br>
+        </div>
+           <span class="help-block has-error">
+                <span ng-show="dailyEntryEditWorkoutForm.workoutType.$error.required">
+                    Workout type is required.
+                </span>
+            </span>
+
+        <label class="col-md-1 control-label"
+               for="inputDailyEntryDistance">Distance</label>
+
+        <div class="col-md-1">
+          <input class="form-control"
+                 id="inputDailyEntryDistance"
+                 ng-model="workout.distance"/>
+        </div>
+
+        <label class="col-md-1 control-label"
+               for="inputDailyEntryTime">Time</label>
+
+        <div class="col-md-1">
+          <input class="form-control"
+                 id="inputDailyEntryTime"
+                 ng-model="workout.totalTime"/>
+        </div>
+
+        <label class="col-md-1 control-label">Route</label>
+
+        <div class="col-md-1">
+          <input class="form-control"
+                 placeholder="Other"
+                 disabled="disabled"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-2 control-label"
+               for="inputDailyEntryNotes">Notes</label>
+
+        <div class="col-md-10">
+                <textarea class="form-control"
+                          id="inputDailyEntryNotes"
+                          placeholder="Notes"
+                          rows="3"
+                          ng-model="workout.notes"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:140px;margin-right:10px"
+                                ng-click="vm.removeWorkout($index)">
+                          Remove Workout
+                        </button>
+                    </span>
+
+        </div>
+      </div>
+
+      <hr>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-2">
+                  <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit()"
+                                ng-disabled="dailyEntryEditWorkoutForm.$invalid">
+                          Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                          Cancel
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:140px;margin-right:10px"
+                                ng-click="vm.addWorkout(vm.dailyEntry)"
+                                ng-disabled="dailyEntryEditWorkoutForm.$invalid">
+                          Add Workout
+                        </button>
+                    </span>
+
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+

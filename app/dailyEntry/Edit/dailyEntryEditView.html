@@ -1,0 +1,21 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        {{vm.title}}
+    </div>
+
+    <div class="panel-body">
+        <div class="wizard">
+            <a ui-sref=".main"
+               ui-sref-active="active">
+                Daily Entry
+            </a>
+            <a ui-sref=".workout"
+               ui-sref-active="active">
+                Workouts
+            </a>
+        </div>
+
+        <div ui-view></div>
+    </div>
+
+</div>

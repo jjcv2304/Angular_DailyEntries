@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">Daily Entry
+        List
+    </div>
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+            <tr>
+                <td>date</td>
+                <td>sleep</td>
+                <td>fatigue</td>
+                <td>stress</td>
+                <td>soreness</td>
+                <td>weight</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="dailyEntry in vm.dailyEntries">
+              <td>
+                <a ui-sref="dailyEntryDetail({dailyEntryId: dailyEntry.dailyEntryId})">
+                  {{ dailyEntry.date}}</a>
+              </td>
+                <td>{{ dailyEntry.sleep}}</td>
+                <td>{{ dailyEntry.fatigue}}</td>
+                <td>{{ dailyEntry.stress }}</td>
+                <td>{{ dailyEntry.soreness }}</td>
+                <td>{{ dailyEntry.weight }}</td>
+              <td>
+                <a class="btn btn-primary"
+                   ui-sref="dailyEntryEdit.main({dailyEntryId: dailyEntry.dailyEntryId})">
+                  Edit
+                </a>
+              </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
