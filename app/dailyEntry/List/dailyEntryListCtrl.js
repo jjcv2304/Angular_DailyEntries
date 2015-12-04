@@ -10,8 +10,8 @@
     function DailyEntryListCtrl(dailyEntryResource) {
         var vm = this;
 
-        dailyEntryResource.query(function(data) {
-            vm.dailyEntries = data;
+        dailyEntryResource.get(function(data) {
+            vm.dailyEntries = data.dailyFeelingsVM;
         });
     }
 

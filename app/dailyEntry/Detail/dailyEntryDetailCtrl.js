@@ -4,16 +4,16 @@
     angular
         .module("dailyEntryManagement")
         .controller("DailyEntryDetailCtrl",
-                    ["dailyEntry",
+                    ["dailyEntry","$filter",
                         DailyEntryDetailCtrl]);
 
-    function DailyEntryDetailCtrl(dailyEntry) {
+    function DailyEntryDetailCtrl(dailyEntry, $filter) {
         var vm = this;
 
         vm.dailyEntry = dailyEntry;
 
-        vm.title = "Entry Detail: " + vm.dailyEntry.date;
-
+        var _date = $filter('date')(new Date(vm.dailyEntry.date), 'MMM dd yyyy');
+        vm.title = "Entry Detail: " + _date;
         vm.getWorkoutNameById = function (id){
             var selectedName = "Other";
 

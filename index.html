@@ -29,7 +29,7 @@
   <!-- Services -->
   <script src="common/services/common.services.js"></script>
   <script src="common/services/dailyEntryResource.js"></script>
-  <script src="common/services/dailyEntryResourceMock.js"></script>
+  <!--<script src="common/services/dailyEntryResourceMock.js"></script>-->
 
   <!-- Entry Controllers -->
   <script src="app/dailyEntry/List/dailyEntryListCtrl.js"></script>
@@ -58,7 +58,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a ui-sref="dailyEntryList">Daily Entry List</a></li>
-        <li><a ui-sref="dailyEntryEdit({dailyEntryId:0})">
+        <li><a ui-sref="dailyEntryEdit.main({dailyEntryId:0})">
           <i class="glyphicon glyphicon-plus"></i>
           Add Entry</a></li>
         <li><a ui-sref="dailyEntryAnalytics">Daily Entries Analytics</a></li>

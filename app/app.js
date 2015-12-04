@@ -6,8 +6,7 @@
       "ui.router",
       "ui.mask",
       "ui.bootstrap",
-      "angularCharts",
-      "dailyEntryResourceMock"]);
+      "angularCharts"]);
 
 
   app.config(function ($provide) {
@@ -38,6 +37,12 @@
           url: "/dailyEntry",
           templateUrl: "app/dailyEntry/List/dailyEntryListView.html",
           controller: "DailyEntryListCtrl as vm"
+        })
+
+        .state("dailyEntryCreate", {
+          url:"",
+          templateUrl: "",
+          controller: ""
         })
 
         .state("dailyEntryEdit", {

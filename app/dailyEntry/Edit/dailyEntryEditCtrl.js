@@ -43,22 +43,17 @@
 
       var newWorkout = {
         "workoutId": 0,
-        "date": dailyEntry.date,
-        "time": "",
         "workoutType": {
           "workoutTypeId":10,
           "name": "Other"
         },
-        "routeId": 0,
         "distance": 0,
-        "timeSpend": "",
         "totalTime": "",
         "notes": "",
         "dailyEntryId": dailyEntry.dailyEntryId
       };
 
-      vm.dailyEntry.workout = vm.dailyEntry.workout ? vm.dailyEntry.workout.concat(newWorkout) : newWorkout;
-      //vm.newTags = "";
+      vm.dailyEntry.workout = vm.dailyEntry.workout ? vm.dailyEntry.workout.concat(newWorkout) : [newWorkout];
 
     }
 

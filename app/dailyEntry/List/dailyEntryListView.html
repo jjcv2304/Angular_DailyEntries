@@ -21,7 +21,7 @@
             <tr ng-repeat="dailyEntry in vm.dailyEntries">
               <td>
                 <a ui-sref="dailyEntryDetail({dailyEntryId: dailyEntry.dailyEntryId})">
-                  {{ dailyEntry.date}}</a>
+                  {{ dailyEntry.date | date}}</a>
               </td>
                 <td>{{ dailyEntry.sleep}}</td>
                 <td>{{ dailyEntry.fatigue}}</td>

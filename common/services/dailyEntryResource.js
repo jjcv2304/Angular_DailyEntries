@@ -6,10 +6,11 @@
         .module("common.services")
         .factory("dailyEntryResource",
                 ["$resource",
+                  "appSettings",
                  dailyEntryResource]);
 
-    function dailyEntryResource($resource) {
-        return $resource("/api/dailyEntry/:dailyEntryId")
+    function dailyEntryResource($resource, appSettings) {
+        return $resource(appSettings.serverPath + "/api/dailyEntry/:dailyFeelingId");
     }
 
 }());

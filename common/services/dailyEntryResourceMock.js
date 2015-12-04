@@ -15,20 +15,16 @@
         "stress": 5,
         "soreness": 5,
         "notes": "",
-        "date": "January 15, 2015",
+        "date": "Jan 15, 2015",
         "restingHeartRate": 65,
         "weight": 78.5,
         "workout":[{
           "workoutId" :2,
-          "date": "January 15, 2015",
-          "time": "18:00:00",
           "workoutType": {
             "workoutTypeId": 2,
             "name": "Run"
           },
-          "routeId": 1,
           "distance": 13,
-          "timeSpend": "1:30",
           "totalTime": "90",
           "notes": "",
           "dailyEntryId": 1
@@ -41,20 +37,16 @@
         "stress": 5,
         "soreness": 4,
         "notes": "",
-        "date": "January 16, 2015",
+        "date": "Jan 16, 2015",
         "restingHeartRate": 64,
         "weight": 75.0,
         "workout": [{
           "workoutId" :2,
-          "date": "January 16, 2015",
-          "time": "18:00:00",
           "workoutType": {
             "workoutTypeId": 2,
             "name": "Run"
           },
-          "routeId": 1,
           "distance": 13,
-          "timeSpend": "1:32",
           "totalTime": "90",
           "notes": "Good feeling",
           "dailyEntryId": 2
@@ -67,20 +59,16 @@
         "stress": 5,
         "soreness": 5,
         "notes": "",
-        "date": "January 17, 2015",
+        "date": "Jan 17, 2015",
         "restingHeartRate": 65,
         "weight": 68.5,
         "workout": [{
           "workoutId" :3,
-          "date": "January 17, 2015",
-          "time": "18:00:00",
           "workoutType": {
             "workoutTypeId": 1,
             "name": "Swimming"
           },
-          "routeId": 1,
           "distance": 1200,
-          "timeSpend": "",
           "totalTime": "",
           "notes": "",
           "dailyEntryId": 3
@@ -93,20 +81,16 @@
         "stress": 4,
         "soreness": 4,
         "notes": "",
-        "date": "January 18, 2015",
+        "date": "Jan 18, 2015",
         "restingHeartRate": 65,
         "weight": 68.2,
         "workout": [{
           "workoutId" :4,
-          "date": "January 18, 2015",
-          "time": "18:00:00",
           "workoutType": {
             "workoutTypeId": 2,
             "name": "Run"
           },
-          "routeId": 1,
           "distance": 13,
-          "timeSpend": "1:35",
           "totalTime": "90",
           "notes": "",
           "dailyEntryId": 4
@@ -119,35 +103,27 @@
         "stress": 5,
         "soreness": 5,
         "notes": "",
-        "date": "January 21, 2015",
+        "date": "Jan 21, 2015",
         "restingHeartRate": 55,
         "weight": 67.5,
         "workout":[{
           "workoutId" :5,
-          "date": "January 21, 2015",
-          "time": "18:00:00",
           "workoutType": {
             "workoutTypeId": 1,
             "name": "Swimming"
           },
-          "routeId": 1,
           "distance": 1300,
-          "timeSpend": "",
           "totalTime": "",
           "notes": "Fresh",
           "dailyEntryId": 5
         },
           {
             "workoutId" :6,
-            "date": "January 21, 2015",
-            "time": "18:00:00",
             "workoutType": {
               "workoutTypeId": 2,
               "name": "Run"
             },
-            "routeId": 1,
             "distance": 13,
-            "timeSpend": "",
             "totalTime": "1:30",
             "notes": "Tired",
             "dailyEntryId": 5
