@@ -1,13 +1,8 @@
 (function () {
   "use strict";
 
-  angular
-    .module("dailyEntryManagement")
-    .controller("DailyEntryEditCtrl",
-      ["dailyEntry",
-        "$state",
-        DailyEntryEditCtrl]);
-
+  angular.module("dailyEntryManagement")
+    .controller("DailyEntryEditCtrl", ["dailyEntry", "$state", DailyEntryEditCtrl]);
 
   function DailyEntryEditCtrl(dailyEntry, $state) {
     var vm = this;
@@ -28,11 +23,22 @@
       vm.opened = !vm.opened;
     };
 
+    //vm.submit = function () {
+    //  vm.dailyEntry.$save(function (data) {
+    //    toastr.success("Save Successful");
+    //  });
+    //}
+
     vm.submit = function () {
-      vm.dailyEntry.$save(function (data) {
+      if (this.dailyEntry.dailyFeelingId) {
+        vm.dailyEntry.$update(function (data) {
           toastr.success("Save Successful");
-        }
-      );
+        });
+      } else {
+        vm.dailyEntry.$save(function (data) {
+          toastr.success("Save Successful");
+        });
+      }
     }
 
     vm.cancel = function () {
@@ -44,7 +50,7 @@
       var newWorkout = {
         "workoutId": 0,
         "workoutType": {
-          "workoutTypeId":10,
+          "workoutTypeId": 10,
           "name": "Other"
         },
         "distance": 0,

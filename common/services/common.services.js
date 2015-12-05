@@ -2,11 +2,7 @@
     "use strict";
 
     angular
-        .module("common.services",
-                ["ngResource"])
-      .constant("appSettings",
-        {
-            serverPath :"http://localhost:8901/"
-        });
+      .module("common.services", ["ngResource"])
+      .constant("appSettings", {serverPath :"http://localhost:8901/"});
 }());
 
