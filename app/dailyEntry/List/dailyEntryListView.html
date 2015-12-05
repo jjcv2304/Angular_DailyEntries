@@ -20,7 +20,7 @@
             <tbody>
             <tr ng-repeat="dailyEntry in vm.dailyEntries">
               <td>
-                <a ui-sref="dailyEntryDetail({dailyEntryId: dailyEntry.dailyEntryId})">
+                <a ui-sref="dailyEntryDetail({dailyFeelingId: dailyEntry.dailyFeelingId})">
                   {{ dailyEntry.date | date}}</a>
               </td>
                 <td>{{ dailyEntry.sleep}}</td>
@@ -30,7 +30,7 @@
                 <td>{{ dailyEntry.weight }}</td>
               <td>
                 <a class="btn btn-primary"
-                   ui-sref="dailyEntryEdit.main({dailyEntryId: dailyEntry.dailyEntryId})">
+                   ui-sref="dailyEntryEdit.main({dailyFeelingId: dailyEntry.dailyFeelingId})">
                   Edit
                 </a>
               </td>

@@ -47,15 +47,15 @@
 
         .state("dailyEntryEdit", {
           abstract: true,
-          url: "/dailyEntry/edit/:dailyEntryId",
+          url: "/dailyEntry/edit/:dailyFeelingId",
           templateUrl: "app/dailyEntry/Edit/dailyEntryEditView.html",
           controller: "DailyEntryEditCtrl as vm",
           resolve: {
             dailyEntryResource: "dailyEntryResource",
 
             dailyEntry: function(dailyEntryResource, $stateParams){
-              var dailyEntryId = $stateParams.dailyEntryId;
-              return dailyEntryResource.get({dailyEntryId: dailyEntryId}).$promise;
+              var dailyFeelingId = $stateParams.dailyFeelingId;
+              return dailyEntryResource.get({dailyFeelingId: dailyFeelingId}).$promise;
             }
           }
         })
@@ -69,15 +69,15 @@
         })
 
         .state("dailyEntryDetail", {
-          url: "/dailyEntry/:dailyEntryId",
+          url: "/dailyEntry/:dailyFeelingId",
           templateUrl: "app/dailyEntry/Detail/dailyEntryDetailView.html",
           controller: "DailyEntryDetailCtrl as vm",
           resolve: {
             dailyEntryResource: "dailyEntryResource",
 
             dailyEntry: function(dailyEntryResource, $stateParams){
-              var dailyEntryId = $stateParams.dailyEntryId;
-              return dailyEntryResource.get({dailyEntryId: dailyEntryId}).$promise;
+              var dailyFeelingId = $stateParams.dailyFeelingId;
+              return dailyEntryResource.get({dailyFeelingId: dailyFeelingId}).$promise;
             }
           }
         })

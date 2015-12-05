@@ -4,7 +4,8 @@
     angular
         .module("dailyEntryManagement")
         .controller("DailyEntryDetailCtrl",
-                    ["dailyEntry","$filter",
+                    ["dailyEntry",
+                        "$filter",
                         DailyEntryDetailCtrl]);
 
     function DailyEntryDetailCtrl(dailyEntry, $filter) {

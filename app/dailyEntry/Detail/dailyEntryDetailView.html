@@ -40,10 +40,10 @@
       </div>
 
       <div class="col-md-6">
-        <div ng-repeat="workout in vm.dailyEntry.workout">
+        <div ng-repeat="workout in vm.dailyEntry.workoutsVM">
           <div class="row">
             <div class="col-md-3 myDiv">Workout:</div>
-            <div class="col-md-3">{{workout.workoutType.name}}</div>
+            <div class="col-md-3">{{workout.workoutTypeName}}</div>
           </div>
 
           <!--<div class="row">-->
@@ -72,7 +72,7 @@
       Back
     </a>
     <a class="btn btn-primary"
-       ui-sref="dailyEntryEdit.main({dailyEntryId: vm.dailyEntry.dailyEntryId})"
+       ui-sref="dailyEntryEdit.main({dailyFeelingId: vm.dailyEntry.dailyFeelingId})"
        style="width:80px;margin-left:10px">
       Edit
     </a>

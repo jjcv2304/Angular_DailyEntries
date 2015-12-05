@@ -2,13 +2,13 @@
   <fieldset>
     <legend>Workout Information</legend>
 
-    <div ng-repeat="workout in vm.dailyEntry.workout">
+    <div ng-repeat="workout in vm.dailyEntry.workoutsVM">
       <!--Fields-->
       <div class="form-group">
         <label class="col-md-2 control-label" for="workoutType">Workout</label>
 
         <div class="col-md-2">
-          <select id="workoutType" name="workoutType" ng-model="workout.workoutType.workoutTypeId" required>
+          <select id="workoutType" name="workoutType" ng-model="workout.workoutTypeId" required>
             <option value="10">Other</option>
             <option value="1">Swimming</option>
             <option value="2">Running</option>
