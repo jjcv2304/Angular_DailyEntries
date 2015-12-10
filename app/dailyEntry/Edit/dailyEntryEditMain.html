@@ -39,59 +39,59 @@
 
     <div class="form-group">
 
-      <div ng-class="{'has-error':(dailyEntryEditWorkoutForm.inputDailyEntrySleep.$invalid &&
-                                    dailyEntryEditWorkoutForm.inputDailyEntrySleep.$dirty) ||
-                                    (dailyEntryEditWorkoutForm.inputDailyEntrySoreness.$invalid &&
-                                    dailyEntryEditWorkoutForm.inputDailyEntrySoreness.$dirty) ||
-                                    (dailyEntryEditWorkoutForm.inputDailyEntryFatigue.$invalid &&
-                                    dailyEntryEditWorkoutForm.inputDailyEntryFatigue.$dirty) ||
-                                    (dailyEntryEditWorkoutForm.inputDailyEntryStress.$invalid &&
-                                    dailyEntryEditWorkoutForm.inputDailyEntryStress.$dirty)}">
+      <div ng-class="{'has-error':(dailyEntryEditForm.inputDailyEntrySleep.$invalid &&
+                                    dailyEntryEditForm.inputDailyEntrySleep.$dirty) ||
+                                    (dailyEntryEditForm.inputDailyEntrySoreness.$invalid &&
+                                    dailyEntryEditForm.inputDailyEntrySoreness.$dirty) ||
+                                    (dailyEntryEditForm.inputDailyEntryFatigue.$invalid &&
+                                    dailyEntryEditForm.inputDailyEntryFatigue.$dirty) ||
+                                    (dailyEntryEditForm.inputDailyEntryStress.$invalid &&
+                                    dailyEntryEditForm.inputDailyEntryStress.$dirty)}">
 
         <span class="help-block has-error" style="margin-left: 200px;">
-                <span ng-show="dailyEntryEditWorkoutForm.inputDailyEntrySleep.$error.required ||
-                dailyEntryEditWorkoutForm.inputDailyEntrySoreness.$error.required ||
-                dailyEntryEditWorkoutForm.inputDailyEntryFatigue.$error.required ||
-                dailyEntryEditWorkoutForm.inputDailyEntryStress.$error.required ||
-                dailyEntryEditWorkoutForm.inputDailyEntrySleep.$error.max ||
-                      dailyEntryEditWorkoutForm.inputDailyEntrySoreness.$error.max ||
-                      dailyEntryEditWorkoutForm.inputDailyEntryFatigue.$error.max ||
-                      dailyEntryEditWorkoutForm.inputDailyEntryStress.$error.max ||
-                      dailyEntryEditWorkoutForm.inputDailyEntrySleep.$error.min ||
-                dailyEntryEditWorkoutForm.inputDailyEntrySoreness.$error.min ||
-                dailyEntryEditWorkoutForm.inputDailyEntryFatigue.$error.min ||
-                dailyEntryEditWorkoutForm.inputDailyEntryStress.$error.min">
+                <span ng-show="dailyEntryEditForm.inputDailyEntrySleep.$error.required ||
+                dailyEntryEditForm.inputDailyEntrySoreness.$error.required ||
+                dailyEntryEditForm.inputDailyEntryFatigue.$error.required ||
+                dailyEntryEditForm.inputDailyEntryStress.$error.required ||
+                dailyEntryEditForm.inputDailyEntrySleep.$error.max ||
+                      dailyEntryEditForm.inputDailyEntrySoreness.$error.max ||
+                      dailyEntryEditForm.inputDailyEntryFatigue.$error.max ||
+                      dailyEntryEditForm.inputDailyEntryStress.$error.max ||
+                      dailyEntryEditForm.inputDailyEntrySleep.$error.min ||
+                dailyEntryEditForm.inputDailyEntrySoreness.$error.min ||
+                dailyEntryEditForm.inputDailyEntryFatigue.$error.min ||
+                dailyEntryEditForm.inputDailyEntryStress.$error.min">
                     A value between 0 and 5 is required.
                 </span>
             </span>
       </div>
 
-      <div ng-class="{'has-error':dailyEntryEditWorkoutForm.inputDailyEntrySleep.$invalid &&
-                                    dailyEntryEditWorkoutForm.inputDailyEntrySleep.$dirty}">
+      <div ng-class="{'has-error':dailyEntryEditForm.inputDailyEntrySleep.$invalid &&
+                                    dailyEntryEditForm.inputDailyEntrySleep.$dirty}">
         <label class="col-md-2 control-label" for="inputDailyEntrySleep">Sleep</label>
         <div class="col-md-1"><input class=" form-control" id="inputDailyEntrySleep" name="inputDailyEntrySleep" ng-model="vm.dailyEntry.sleep"
                                      type="number" min="0" max="5" required>
         </div>
       </div>
 
-      <div ng-class="{'has-error':dailyEntryEditWorkoutForm.inputDailyEntryFatigue.$invalid &&
-                                    dailyEntryEditWorkoutForm.inputDailyEntryFatigue.$dirty}">
+      <div ng-class="{'has-error':dailyEntryEditForm.inputDailyEntryFatigue.$invalid &&
+                                    dailyEntryEditForm.inputDailyEntryFatigue.$dirty}">
         <label class="col-md-2 control-label" for="inputDailyEntryFatigue">Fatigue</label>
         <div class="col-md-1"> <input class="form-control" id="inputDailyEntryFatigue" name="inputDailyEntryFatigue" ng-model="vm.dailyEntry.fatigue"
                                       type="number" min="0" max="5" required>
         </div>
       </div>
 
-      <div ng-class="{'has-error':dailyEntryEditWorkoutForm.inputDailyEntrySoreness.$invalid &&
-                                    dailyEntryEditWorkoutForm.inputDailyEntrySoreness.$dirty}">
+      <div ng-class="{'has-error':dailyEntryEditForm.inputDailyEntrySoreness.$invalid &&
+                                    dailyEntryEditForm.inputDailyEntrySoreness.$dirty}">
         <label class="col-md-2 control-label" for="inputDailyEntrySoreness">Soreness</label>
         <div class="col-md-1"> <input class="form-control" id="inputDailyEntrySoreness" name="inputDailyEntrySoreness" ng-model="vm.dailyEntry.soreness"
                                       type="number" min="0" max="5" required>
         </div>
       </div>
 
-      <div ng-class="{'has-error':dailyEntryEditWorkoutForm.inputDailyEntryStress.$invalid &&
-                                    dailyEntryEditWorkoutForm.inputDailyEntryStress.$dirty}">
+      <div ng-class="{'has-error':dailyEntryEditForm.inputDailyEntryStress.$invalid &&
+                                    dailyEntryEditForm.inputDailyEntryStress.$dirty}">
         <label class="col-md-2 control-label" for="inputDailyEntryStress">Stress</label>
         <div class="col-md-1"> <input class="form-control" id="inputDailyEntryStress" name="inputDailyEntryStress" ng-model="vm.dailyEntry.stress"
                                       type="number" min="0" max="5" required>
@@ -119,7 +119,7 @@
                         <button class="btn btn-primary"
                                 style="width:80px;margin-right:10px"
                                 ng-click="vm.submit()"
-                                ng-disabled="dailyEntryEditWorkoutForm.$invalid">
+                                ng-disabled="dailyEntryEditForm.$invalid">
                           Save
                         </button>
                     </span>

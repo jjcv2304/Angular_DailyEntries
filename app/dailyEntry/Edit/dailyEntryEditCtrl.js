@@ -49,22 +49,21 @@
 
       var newWorkout = {
         "workoutId": 0,
-        "workoutType": {
-          "workoutTypeId": 10,
-          "name": "Other"
-        },
+        "workoutTypeId": 10,
+        "workoutTypeName": "Other",
         "distance": 0,
         "totalTime": "",
         "notes": "",
-        "dailyEntryId": dailyEntry.dailyEntryId
+        "dailyEntryId": dailyEntry.dailyFeelingId
       };
 
-      vm.dailyEntry.workout = vm.dailyEntry.workout ? vm.dailyEntry.workout.concat(newWorkout) : [newWorkout];
+      vm.dailyEntry.workoutsVM = vm.dailyEntry.workoutsVM ? vm.dailyEntry.workoutsVM.concat(newWorkout) : [newWorkout];
+      //vm.dailyEntry.workoutsVM = [newWorkout];
 
     }
 
     vm.removeWorkout = function (idx) {
-      vm.dailyEntry.workout.splice(idx, 1);
+      vm.dailyEntry.workoutsVM.splice(idx, 1);
     }
 
   }

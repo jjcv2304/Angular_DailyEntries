@@ -13,6 +13,10 @@
         dailyEntryResource.get(function(data) {
             vm.dailyEntries = data.dailyFeelingsVM;
         });
+
+        vm.delete = function (dailyEntry){
+            dailyEntry.$remove();
+        }
     }
 
 }());

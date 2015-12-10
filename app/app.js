@@ -39,11 +39,11 @@
           controller: "DailyEntryListCtrl as vm"
         })
 
-        .state("dailyEntryCreate", {
-          url:"",
-          templateUrl: "",
-          controller: ""
-        })
+        //.state("dailyEntryCreate", {
+        //  url:"",
+        //  templateUrl: "",
+        //  controller: ""
+        //})
 
         .state("dailyEntryEdit", {
           abstract: true,
@@ -52,7 +52,6 @@
           controller: "DailyEntryEditCtrl as vm",
           resolve: {
             dailyEntryResource: "dailyEntryResource",
-
             dailyEntry: function(dailyEntryResource, $stateParams){
               var dailyFeelingId = $stateParams.dailyFeelingId;
               return dailyEntryResource.get({dailyFeelingId: dailyFeelingId}).$promise;
@@ -74,7 +73,19 @@
           controller: "DailyEntryDetailCtrl as vm",
           resolve: {
             dailyEntryResource: "dailyEntryResource",
+            dailyEntry: function(dailyEntryResource, $stateParams){
+              var dailyFeelingId = $stateParams.dailyFeelingId;
+              return dailyEntryResource.get({dailyFeelingId: dailyFeelingId}).$promise;
+            }
+          }
+        })
 
+        .state("dailyEntryDelete", {
+          url: "/dailyEntry/delete/:dailyFeelingId",
+          templateUrl: "app/dailyEntry/Delete/dailyEntryDeleteView.html",
+          controller: "DailyEntryDeleteCtrl as vm",
+          resolve: {
+            dailyEntryResource: "dailyEntryResource",
             dailyEntry: function(dailyEntryResource, $stateParams){
               var dailyFeelingId = $stateParams.dailyFeelingId;
               return dailyEntryResource.get({dailyFeelingId: dailyFeelingId}).$promise;
