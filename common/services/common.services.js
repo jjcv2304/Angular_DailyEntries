@@ -3,6 +3,7 @@
 
     angular
       .module("common.services", ["ngResource"])
-      .constant("appSettings", {serverPath :"http://localhost:8901/"});
+    //.constant("appSettings", {serverPath :""});
+      .constant("appSettings", {serverPath :"http://localhost:8901/"}); //todo webapi
 }());
 

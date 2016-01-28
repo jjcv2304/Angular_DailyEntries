@@ -1,16 +1,12 @@
 (function () {
     "use strict";
 
-    angular
-        .module("dailyEntryManagement")
-        .controller("DailyEntryDetailCtrl",
-                    ["dailyEntry",
-                        "$filter",
-                        DailyEntryDetailCtrl]);
+    angular.module("dailyEntryApp")
+        .controller("DailyEntryDetailCtrl", ["dailyEntry", "$filter", DailyEntryDetailCtrl]);
 
     function DailyEntryDetailCtrl(dailyEntry, $filter) {
-        var vm = this;
 
+        var vm = this;
         vm.dailyEntry = dailyEntry;
 
         var _date = $filter('date')(new Date(vm.dailyEntry.date), 'MMM dd yyyy');

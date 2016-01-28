@@ -1,8 +1,9 @@
 
 (function () {
   "use strict";
-  var app = angular.module("dailyEntryManagement",
+  var app = angular.module("dailyEntryApp",
     ["common.services",
+      "dailyEntryResourceMock",
       "ui.router",
       "ui.mask",
       "ui.bootstrap",
@@ -14,41 +15,41 @@
       ["$delegate",
         function ($delegate) {
           return function (exception, cause) {
-            exception.message = "Please contact the Help Desk! \n Message: " +
-              exception.message;
+            exception.message = exception.message + " Stack:" + exception.stack;
             $delegate(exception, cause);
             alert(exception.message);
           };
         }]);
   });
 
-  app.config(["$stateProvider",
-    "$urlRouterProvider",
-    function ($stateProvider, $urlRouterProvider) {
+  app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+
       $urlRouterProvider.otherwise("/");
+
+      var relativeStartPath= "app/";
 
       $stateProvider
         .state("home", {
           url: "/",
-          templateUrl: "app/welcomeView.html"
+          templateUrl: relativeStartPath + "welcomeView.html"
         })
 
         .state("dailyEntryList", {
           url: "/dailyEntry",
-          templateUrl: "app/dailyEntry/List/dailyEntryListView.html",
+          templateUrl: relativeStartPath + "dailyEntry/dailyEntryListView.html",
           controller: "DailyEntryListCtrl as vm"
         })
 
         //.state("dailyEntryCreate", {
         //  url:"",
-        //  templateUrl: "",
+        //  templateUrl: relativeStartPath +  "",
         //  controller: ""
         //})
 
         .state("dailyEntryEdit", {
           abstract: true,
           url: "/dailyEntry/edit/:dailyFeelingId",
-          templateUrl: "app/dailyEntry/Edit/dailyEntryEditView.html",
+          templateUrl: relativeStartPath +  "dailyEntry/dailyEntryEditView.html",
           controller: "DailyEntryEditCtrl as vm",
           resolve: {
             dailyEntryResource: "dailyEntryResource",
@@ -60,16 +61,16 @@
         })
         .state("dailyEntryEdit.main", {
           url:"/main",
-          templateUrl: "app/dailyEntry/Edit/dailyEntryEditMain.html"
+          templateUrl: relativeStartPath +  "dailyEntry/dailyEntryEditMain.html"
         })
         .state("dailyEntryEdit.workout", {
           url:"/workout",
-          templateUrl: "app/dailyEntry/Edit/dailyEntryEditWorkout.html"
+          templateUrl: relativeStartPath +  "dailyEntry/dailyEntryEditWorkout.html"
         })
 
         .state("dailyEntryDetail", {
           url: "/dailyEntry/:dailyFeelingId",
-          templateUrl: "app/dailyEntry/Detail/dailyEntryDetailView.html",
+          templateUrl: relativeStartPath +  "dailyEntry/dailyEntryDetailView.html",
           controller: "DailyEntryDetailCtrl as vm",
           resolve: {
             dailyEntryResource: "dailyEntryResource",
@@ -82,7 +83,7 @@
 
         .state("dailyEntryDelete", {
           url: "/dailyEntry/delete/:dailyFeelingId",
-          templateUrl: "app/dailyEntry/Delete/dailyEntryDeleteView.html",
+          templateUrl: relativeStartPath +  "dailyEntry/dailyEntryDeleteView.html",
           controller: "DailyEntryDeleteCtrl as vm",
           resolve: {
             dailyEntryResource: "dailyEntryResource",
@@ -95,7 +96,7 @@
 
         .state("dailyEntryAnalytics", {
           url: "/dailyEntryAnalytics",
-          templateUrl:"app/dailyEntry/Charts/dailyEntryAnalyticsView.html",
+          templateUrl: relativeStartPath + "dailyEntry/dailyEntryAnalyticsView.html",
           controller: "DailyEntryAnalyticsCtrl",
           resolve: {
             dailyEntryResource: "dailyEntryResource",

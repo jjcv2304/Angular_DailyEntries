@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-    .module("dailyEntryManagement")
+    .module("dailyEntryApp")
     .controller("DailyEntryDeleteCtrl",
       ["dailyEntry",
         "$filter",

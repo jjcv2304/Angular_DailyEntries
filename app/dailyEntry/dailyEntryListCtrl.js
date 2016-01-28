@@ -1,11 +1,8 @@
-
 (function () {
     "use strict";
-    angular
-        .module("dailyEntryManagement")
-        .controller("DailyEntryListCtrl",
-                    ["dailyEntryResource",
-                        DailyEntryListCtrl]);
+
+    angular.module("dailyEntryApp")
+        .controller("DailyEntryListCtrl", ["dailyEntryResource", DailyEntryListCtrl]);
 
     function DailyEntryListCtrl(dailyEntryResource) {
         var vm = this;

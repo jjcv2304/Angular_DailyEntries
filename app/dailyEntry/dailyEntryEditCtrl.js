@@ -1,10 +1,10 @@
 (function () {
   "use strict";
 
-  angular.module("dailyEntryManagement")
-    .controller("DailyEntryEditCtrl", ["dailyEntry", "$state", DailyEntryEditCtrl]);
+  angular.module("dailyEntryApp")
+    .controller("DailyEntryEditCtrl", ["dailyEntry", "$state", "dailyEntryService", DailyEntryEditCtrl]);
 
-  function DailyEntryEditCtrl(dailyEntry, $state) {
+  function DailyEntryEditCtrl(dailyEntry, $state, dailyEntryService) {
     var vm = this;
 
     vm.dailyEntry = dailyEntry;
@@ -23,20 +23,19 @@
       vm.opened = !vm.opened;
     };
 
-    //vm.submit = function () {
-    //  vm.dailyEntry.$save(function (data) {
-    //    toastr.success("Save Successful");
-    //  });
-    //}
-
     vm.submit = function () {
-      if (this.dailyEntry.dailyFeelingId) {
+
+        dailyEntry.workoutsVM.forEach(function (workout) {
+            workout.workoutTypeName = dailyEntryService.getWorkoutNameById(workout.workoutTypeId);
+        });
+
+      if (vm.dailyEntry.dailyFeelingId) {
         vm.dailyEntry.$update(function (data) {
-          toastr.success("Save Successful");
+          toastr.success("Update Successful");
         });
       } else {
         vm.dailyEntry.$save(function (data) {
-          toastr.success("Save Successful");
+          toastr.success("Insert Successful");
         });
       }
     }
@@ -58,8 +57,6 @@
       };
 
       vm.dailyEntry.workoutsVM = vm.dailyEntry.workoutsVM ? vm.dailyEntry.workoutsVM.concat(newWorkout) : [newWorkout];
-      //vm.dailyEntry.workoutsVM = [newWorkout];
-
     }
 
     vm.removeWorkout = function (idx) {

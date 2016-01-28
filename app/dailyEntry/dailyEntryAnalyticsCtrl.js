@@ -3,7 +3,7 @@
     "use strict";
 
     angular
-        .module("dailyEntryManagement")
+        .module("dailyEntryApp")
         .controller("DailyEntryAnalyticsCtrl",
                     ["$scope",
                      "$filter",
