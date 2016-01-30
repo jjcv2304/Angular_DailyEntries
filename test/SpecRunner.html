@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Jasmine Spec Runner v2.3.4</title>
+    <meta charset="utf-8">
+    <title>Jasmine Spec Runner v2.3.4</title>
 
-  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.3.4/jasmine_favicon.png">
-  <link rel="stylesheet" href="lib/jasmine-2.3.4/jasmine.css">
+    <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.3.4/jasmine_favicon.png">
+    <link rel="stylesheet" href="lib/jasmine-2.3.4/jasmine.css">
 
-  <script src="lib/jasmine-2.3.4/jasmine.js"></script>
-  <script src="lib/jasmine-2.3.4/jasmine-html.js"></script>
-  <script src="lib/jasmine-2.3.4/boot.js"></script>
+    <script src="lib/jasmine-2.3.4/jasmine.js"></script>
+    <script src="lib/jasmine-2.3.4/jasmine-html.js"></script>
+    <script src="lib/jasmine-2.3.4/boot.js"></script>
+    <script src="lib/sinon-1.15.0.js"></script>
 
-  <script src="../lib/angular/angular.js"></script>
-  <script src="../lib/angular/angular-ui-router.js"></script>
-  <script src="../lib/angular/angular-mocks.js"></script>
-  <script src="../lib/angular/angular-resource.js"></script>
+    <script src="../lib/angular/angular.js"></script>
+    <script src="../lib/angular/angular-ui-router.js"></script>
+    <script src="../lib/angular/angular-mocks.js"></script>
+    <script src="../lib/angular/angular-resource.js"></script>
+    <script src="../lib/angular/angular-charts.min.js"></script>
+    <script src="../lib/ui-utils.js"></script>
+    <script src="../lib/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
 
-  <script src="../lib/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+    <!-- include source files here... -->
+    <script src="../app/app.js"></script>
+    <!--dailyEntry-->
+    <script src="../app/dailyEntry/dailyEntryListCtrl.js"></script>
+    <script src="../app/dailyEntry/dailyEntryAnalyticsCtrl.js"></script>
+    <script src="../app/dailyEntry/dailyEntryDeleteCtrl.js"></script>
+    <script src="../app/dailyEntry/dailyEntryDetailCtrl.js"></script>
+    <script src="../app/dailyEntry/dailyEntryEditCtrl.js"></script>
+    <!--common-->
+    <script src="../common/services/common.services.js"></script>
+    <script src="../common/services/dailyEntryResource.js"></script>
+    <script src="../common/services/dailyEntryResourceMock.js"></script>
+    <script src="../common/services/dailyEntrySrv.js"></script>
 
-  <!-- include source files here... -->
-  <script src="../app/app.js"></script>
-  <script src="../app/dailyEntry/dailyEntryListCtrl.js"></script>
-  <script src="../app/dailyEntry/dailyEntryAnalyticsCtrl.js"></script>
-  <script src="../app/dailyEntry/dailyEntryDeleteCtrl.js"></script>
-  <script src="../app/dailyEntry/dailyEntryDetailCtrl.js"></script>
-  <script src="../app/dailyEntry/dailyEntryEditCtrl.js"></script>
-    <script src="../app/dailyEntry/calculator.js"></script>
 
-
-  <!-- include spec files here... -->
-  <script src="unit/dailyEntry/dailyEntryListCtrl.spec.js"></script>
-  <script src="unit/dailyEntry/dailyEntryAnalyticsCtrl.spec.js"></script>
-  <script src="unit/dailyEntry/dailyEntryDeleteCtrl.spec.js"></script>
-  <script src="unit/dailyEntry/dailyEntryDetailCtrl.spec.js"></script>
-  <script src="unit/dailyEntry/dailyEntryEditCtrl.spec.js"></script>
-    <script src="unit/dailyEntry/calculator.spec.js"></script>
+    <!-- include spec files here... -->
+    <!--dailyEntry-->
+    <script src="unit/dailyEntry/dailyEntryListCtrl.spec.js"></script>
+    <script src="unit/dailyEntry/dailyEntryAnalyticsCtrl.spec.js"></script>
+    <script src="unit/dailyEntry/dailyEntryDeleteCtrl.spec.js"></script>
+    <script src="unit/dailyEntry/dailyEntryDetailCtrl.spec.js"></script>
+    <script src="unit/dailyEntry/dailyEntryEditCtrl.spec.js"></script>
+    <!--common-->
+    <script src="unit/common/services/dailyEntryResource.spec.js"></script>
+    <script src="unit/common/services/dailyEntrySrv.spec.js"></script>
 
 </head>
 

@@ -11,6 +11,7 @@
 
         var _date = $filter('date')(new Date(vm.dailyEntry.date), 'MMM dd yyyy');
         vm.title = "Entry Detail: " + _date;
+
         vm.getWorkoutNameById = function (id){
             var selectedName = "Other";
 

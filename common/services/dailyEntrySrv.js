@@ -4,21 +4,20 @@
 (function () {
     "use strict";
 
-    angular.module("common.services").factory('dailyEntryService', [dailyEntryService]);
+    angular.module("common.services").factory('dailyEntryService', dailyEntryService);
 
     function dailyEntryService() {
 
-        function getWorkoutNameById(idStr){
+        function getWorkoutName(idStr){
 
             var id = Number(idStr);
             var selectedName = "Other";
 
             if(id===10){
                 selectedName="Other";
-            } else if(id===1){
+            }else if(id===1){
                 selectedName="Swimming";
-            }
-            else if(id===2){
+            }else if(id===2){
                 selectedName="Running";
             }else if(id===11){
                 selectedName="Climbing";
@@ -37,8 +36,9 @@
             }
             return selectedName;
         };
+
         return {
-            getWorkoutNameById:getWorkoutNameById
+            getWorkoutNameById:getWorkoutName
         }
     };
 

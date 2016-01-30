@@ -2,7 +2,7 @@
   "use strict";
 
   angular.module("dailyEntryApp")
-    .controller("DailyEntryEditCtrl", ["dailyEntry", "$state", "dailyEntryService", DailyEntryEditCtrl]);
+      .controller("DailyEntryEditCtrl", ["dailyEntry", "$state", "dailyEntryService", DailyEntryEditCtrl]);
 
   function DailyEntryEditCtrl(dailyEntry, $state, dailyEntryService) {
     var vm = this;
@@ -25,9 +25,9 @@
 
     vm.submit = function () {
 
-        dailyEntry.workoutsVM.forEach(function (workout) {
-            workout.workoutTypeName = dailyEntryService.getWorkoutNameById(workout.workoutTypeId);
-        });
+      dailyEntry.workoutsVM.forEach(function (workout) {
+        workout.workoutTypeName = dailyEntryService.getWorkoutNameById(workout.workoutTypeId);
+      });
 
       if (vm.dailyEntry.dailyFeelingId) {
         vm.dailyEntry.$update(function (data) {
@@ -41,6 +41,7 @@
     }
 
     vm.cancel = function () {
+      vm.title = "cancel executed";
       $state.go('dailyEntryList');
     }
 
