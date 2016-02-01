@@ -19,7 +19,6 @@ describe('Daily entry edit controller',function () {
         stateSpy = sinon.stub($state, 'go');
     }));
 
-
     it('should set title to New',function () {
         dailyEntry = {};
         vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : dailyEntry, $state : $state, dailyEntryService : dailyEntryService});
@@ -33,18 +32,17 @@ describe('Daily entry edit controller',function () {
     });
 
     it('should redirect to the list',function () {
-        vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : dailyEntry, $state : $state, dailyEntryService : dailyEntryService});
-        //vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : dailyEntry, dailyEntryService : dailyEntryService});
+        vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : dailyEntry,
+            $state : $state, dailyEntryService : dailyEntryService});
         vm.cancel();
-        expect(vm.title).toContain('cancel executed');
-
         expect(stateSpy.calledOnce).toBeTruthy();
-        //expect(stateSpy.withArgs('dailyEntryList2').calledOnce).toBeTruthy();
-
-        //expect($state.go).to.have.been.calledOnce.and.calledWith('dailyEntryList');
-
-        //assert(stateSpy.withArgs('college.main', '{currentCollege: 2}'));
     });
+
+    //it('should redirect to the list 2',function () {
+    //    vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : dailyEntry,
+    //        $state : $state, dailyEntryService : dailyEntryService});
+    //    expect(vm.cancel()).toHaveBeenCalledWith();
+    //});
 
     //console.log(angular.mock.dump($state.get('dailyEntryList')));
     //expect($state.url).toEqual('app/dailyEntry/dailyEntryListView.html');

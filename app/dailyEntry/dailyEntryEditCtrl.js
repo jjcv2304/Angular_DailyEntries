@@ -11,8 +11,7 @@
 
     if (vm.dailyEntry && vm.dailyEntry.dailyEntryId) {
       vm.title = "Edit: " + vm.dailyEntry.date;
-    }
-    else {
+    } else {
       vm.title = "New Daily Entry"
     }
 
