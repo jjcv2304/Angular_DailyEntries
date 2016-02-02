@@ -3,11 +3,7 @@
 
   angular
     .module("dailyEntryApp")
-    .controller("DailyEntryDeleteCtrl",
-      ["dailyEntry",
-        "$filter",
-        "$state",
-        DailyEntryDeleteCtrl]);
+    .controller("DailyEntryDeleteCtrl", ["dailyEntry", "$filter", "$state", DailyEntryDeleteCtrl]);
 
   function DailyEntryDeleteCtrl(dailyEntry, $filter) {
     var vm = this;

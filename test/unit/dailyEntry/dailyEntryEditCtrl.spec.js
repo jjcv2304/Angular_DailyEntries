@@ -1,13 +1,8 @@
-describe('Daily entry edit controller',function () {
-    var vm;
-    var $controller;
-    var scope;
-    var $location;
-    var dailyEntry;
-    var $state;
-    var dailyEntryService;
-    var $controllerProvider;
-    var stateSpy;
+"use strict";
+
+describe('DailyEntryEditController',function () {
+    var vm, $controller, scope, $location, dailyEntry, $state, dailyEntryService, $controllerProvider, mockState,
+        mockDailyEntry;
 
     beforeEach(module('dailyEntryApp'));
 
@@ -15,8 +10,8 @@ describe('Daily entry edit controller',function () {
         scope = $rootScope.$new();
         $controller = _$controller_;
         $state = _$state_;
-         $location = _$location_;
-        stateSpy = sinon.stub($state, 'go');
+        $location = _$location_;
+        mockState = sinon.stub($state, 'go');
     }));
 
     it('should set title to New',function () {
@@ -27,7 +22,8 @@ describe('Daily entry edit controller',function () {
 
     it('should set title to Edit',function () {
         dailyEntry = {dailyEntryId : 1};
-        vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : dailyEntry, $state : $state, dailyEntryService : dailyEntryService});
+        vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : dailyEntry,
+            $state : $state, dailyEntryService : dailyEntryService});
         expect(vm.title).toContain('Edit');
     });
 
@@ -35,16 +31,46 @@ describe('Daily entry edit controller',function () {
         vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : dailyEntry,
             $state : $state, dailyEntryService : dailyEntryService});
         vm.cancel();
-        expect(stateSpy.calledOnce).toBeTruthy();
+        expect(mockState.calledOnce).toBeTruthy();
     });
 
-    //it('should redirect to the list 2',function () {
-    //    vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : dailyEntry,
-    //        $state : $state, dailyEntryService : dailyEntryService});
-    //    expect(vm.cancel()).toHaveBeenCalledWith();
-    //});
+    it('should call dailyEntry update when submit function is called and the entry has already an id assigned ',function () {
+        mockDailyEntry = sinon.stub({dailyFeelingId : 1, workoutsVM: [],$update:function () {}, $save:function () {}})
+        vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : mockDailyEntry,
+            $state : $state, dailyEntryService : dailyEntryService});
+        vm.submit();
+        expect(mockDailyEntry.$update.calledOnce).toBeTruthy();
+    });
 
-    //console.log(angular.mock.dump($state.get('dailyEntryList')));
-    //expect($state.url).toEqual('app/dailyEntry/dailyEntryListView.html');
+    it('should call dailyEntry save when submit function is called and the entry doesn´t have already an id assigned ',function () {
+        mockDailyEntry = sinon.stub({dailyFeelingId : undefined, workoutsVM: [],$update:function () {},
+            $save:function () {}});
+        vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : mockDailyEntry,
+            $state : $state, dailyEntryService : dailyEntryService});
+        vm.submit();
+        expect(mockDailyEntry.$save.calledOnce).toBeTruthy();
+    });
+
+    it('should add a workout to the workouts list when addWorkout is called ',function () {
+        mockDailyEntry = sinon.stub({dailyFeelingId : 1, workoutsVM: []});
+        vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : mockDailyEntry,
+            $state : $state, dailyEntryService : dailyEntryService});
+        expect(vm.dailyEntry.workoutsVM.length).toBe(0);
+        vm.addWorkout({dailyFeelingId:2});
+        expect(vm.dailyEntry.workoutsVM.length).toBe(1);
+        expect(mockDailyEntry.workoutsVM.length).toBe(1);
+    });
+
+    it('should remove a workout from the workouts list when removeWorkout is called ',function () {
+        mockDailyEntry = sinon.stub({dailyFeelingId : 1, workoutsVM: [{workoutId:1},{workoutId:2}]});
+        vm = $controller('DailyEntryEditCtrl as vm', { $location: $location, $scope: scope, dailyEntry : mockDailyEntry,
+            $state : $state, dailyEntryService : dailyEntryService});
+        expect(vm.dailyEntry.workoutsVM.length).toBe(2);
+        vm.removeWorkout(0);
+        expect(vm.dailyEntry.workoutsVM.length).toBe(1);
+        vm.removeWorkout(0);
+        expect(vm.dailyEntry.workoutsVM.length).toBe(0);
+    });
+
     //console.log(angular.mock.dump(vm));
 });

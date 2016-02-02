@@ -40,7 +40,6 @@
     }
 
     vm.cancel = function () {
-      vm.title = "cancel executed";
       $state.go('dailyEntryList');
     }
 
